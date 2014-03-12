@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Dream Navigator]]></title>
-  <link href="http://NoahDragon.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: General | Dream Navigator]]></title>
+  <link href="http://NoahDragon.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://NoahDragon.github.io/"/>
   <updated>2014-03-11T23:23:35-04:00</updated>
   <id>http://NoahDragon.github.io/</id>
@@ -35,7 +35,7 @@ here is a link for <a href="http://octopress.org/docs/deploying/github/">deployi
 You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending <code>bundle exec</code> to your command may solve this.
 /Users/Haochen/myBlog/octopress/Rakefile:2:in `<top (required)>&lsquo;
 (See full trace by running task with &mdash;trace)
-This error could be easily solved by add &#8216;bundle exec&rsquo; in front of the &lsquo;rake&rsquo; command.</p></blockquote>
+This error could be easily solved by add 'bundle exec&rsquo; in front of the &lsquo;rake&rsquo; command.</p></blockquote>
 
 <p>After &lsquo;rake generate&rsquo;, go to &lsquo;_deploy&rsquo; folder, and type &lsquo;git pull origin master&rsquo;.
 Then type &lsquo;rake deploy&rsquo;.
