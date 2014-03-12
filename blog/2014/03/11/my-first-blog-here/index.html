@@ -67,7 +67,7 @@ and I will briefly describe the way &hellip;">
   <li><a href="/">Home</a></li>
   <li><a href="/blog">Blogs</a></li>
   <li><a href="/archives">Archieves</a></li>
-  <li><a href="http://about.me/haochen.zhou">About</a></li>
+  <li><a href="http://about.me/haochen.zhou" target="_blank">About</a></li>
 </ul>
 
 </nav>
@@ -115,7 +115,7 @@ and I will briefly describe the way &hellip;">
 
 <div class="entry-content"><p>Well, this is my first blog here (right now on github).</p>
 
-<p>I&rsquo;m using the <a href="octopress.org">Octopress</a> as blog content management,
+<p>I&rsquo;m using the <a href="http://octopress.org">Octopress</a> as blog content management,
 and I will briefly describe the way to set it up.</p>
 
 <p>First, go to Octopress <a href="http://octopress.org/docs/setup/">setup page</a>.
@@ -126,14 +126,17 @@ install the dependencies that Octopress will need.</p>
 here is a link for <a href="http://octopress.org/docs/deploying/github/">deploying github pages</a>.
 <strong>Note</strong>: a error occured while I followed the instruction to rake it.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake aborted!
-</span><span class='line'>You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending `bundle exec` to your command may solve this.
-</span><span class='line'>/Users/Haochen/myBlog/octopress/Rakefile:2:in `&lt;top (required)&gt;'
-</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake aborted!
+</span><span class='line'>You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6.
+</span><span class='line'>Prepending <span class="sb">`</span>bundle <span class="nb">exec</span><span class="sb">`</span> to your <span class="nb">command </span>may solve this.
+</span><span class='line'>/Users/Haochen/myBlog/octopress/Rakefile:2:in <span class="sb">`</span>&lt;top <span class="o">(</span>required<span class="o">)</span>&gt;<span class="err">&#39;</span>
+</span><span class='line'><span class="o">(</span>See full trace by running task with --trace<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This error could be easily solved by add <code>bundle exec</code> in front of the <code>rake</code> command.</p>
@@ -142,30 +145,33 @@ here is a link for <a href="http://octopress.org/docs/deploying/github/">deployi
 Then type <code>rake deploy</code>.
 Otherwise, there will be some errors:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>error: failed to push some refs to 'git@gihub.com:your github page repo'</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>error: failed to push some refs to <span class="s1">&#39;git@gihub.com:your github page repo&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Now, your blog page is on-line.
-However, you still need version control on your Octopress settings, so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.</p>
+However, you still need version control on your Octopress settings,
+so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m 'your message'
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;your message&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>(I&rsquo;d rather put them into a bash file than typing every time)</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>git_commit_source.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>!/bin/bash
 </span><span class='line'>git add . <span class="o">&amp;&amp;</span>
-</span><span class='line'>git commit -m <span class="s2">&quot;$1&quot;</span> <span class="o">&amp;&amp;</span>
+</span><span class='line'>git commit -m <span class="s2">&quot;$1&quot;</span> <span class="o">&amp;&amp;</span> <span class="c">#first argument will be the commit message</span>
 </span><span class='line'>git push origin <span class="nb">source</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -201,6 +207,87 @@ But, do not forget to add the following to the head of page:</p>
 </span><span class='line'>---
 </span></code></pre></td></tr></table></div></figure>
 
+
+<p><strong>Update</strong> (2014-Mar-12):
+<code>rake preview</code> has problem with Safari.
+Don&rsquo;t know why but only show blank page while open <a href="http://localhost:4000">http://localhost:4000</a> .
+Use Chrome or Firefox will solve this.[<a href="https://github.com/imathis/octopress/issues/1395">ref</a>]</p>
+
+<p>Due to save typing, I have written some bash files:</p>
+
+<figure class='code'><figcaption><span>deploy.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'>bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span>
+</span><span class='line'>bundle <span class="nb">exec </span>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>preview.sh</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># set up the octopress preview</span>
+</span><span class='line'><span class="c"># open http://localhost:4000 in Chrome</span>
+</span><span class='line'><span class="c"># Safari has some wired error in it</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># if previous preview is running, stop it</span>
+</span><span class='line'><span class="nv">preview_pid</span><span class="o">=</span><span class="sb">`</span>/bin/ps -fu <span class="nv">$USER</span>| grep <span class="s2">&quot;rake\ preview&quot;</span> | grep -v <span class="s2">&quot;grep&quot;</span> | awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+</span><span class='line'><span class="nb">kill</span> -2 <span class="nv">$preview_pid</span>
+</span><span class='line'>
+</span><span class='line'>bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span>
+</span><span class='line'>bundle <span class="nb">exec </span>rake preview &amp;
+</span><span class='line'>
+</span><span class='line'>sleep 5 <span class="c"># wait a while to make sure the preview already running</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#change the browser command if you are using a different OS and browser</span>
+</span><span class='line'>/Applications/Google<span class="se">\ </span>Chrome.app/Contents/MacOS/Google<span class="se">\ </span>Chrome <span class="s1">&#39;http://localhost:4000&#39;</span>
+</span><span class='line'>
+</span><span class='line'>pidof <span class="s2">&quot;Google Chrome&quot;</span> | xargs <span class="nb">wait</span>
+</span><span class='line'><span class="nv">preview_pid</span><span class="o">=</span><span class="sb">`</span>/bin/ps -fu <span class="nv">$USER</span>| grep <span class="s2">&quot;rake\ preview&quot;</span> | grep -v <span class="s2">&quot;grep&quot;</span> | awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+</span><span class='line'><span class="nb">kill</span> -2 <span class="nv">$preview_pid</span>
+</span><span class='line'><span class="c">#echo &quot;$preview_pid&quot;</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s2">&quot;Preview DONE!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Warnning</strong>:
+<del>This preview shell script may not work for you if you are a ruby developer,
+or you are using some programs written or depended in/on ruby or ruby packages,
+because it killed all ruby processes at the end.</del>
+Do not forget to fully quit Chrome (Comman+q in MacOS) before starting a new preview,
+otherwise unknown error would occur (duplicate processes).</p>
+
+<p><del>BTW, the preview.sh also left a messy terminal for you.
+Well, everything have side effects.
+But you could add <code>clear</code> command at the end of the script,
+if you don&rsquo;t really care about the traces.</del></p>
 </div>
 
 

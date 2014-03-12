@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | Dream Navigator]]></title>
   <link href="http://NoahDragon.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://NoahDragon.github.io/"/>
-  <updated>2014-03-12T15:26:22-04:00</updated>
+  <updated>2014-03-12T18:03:12-04:00</updated>
   <id>http://NoahDragon.github.io/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -20,7 +20,7 @@
     <id>http://NoahDragon.github.io/blog/2014/03/11/my-first-blog-here</id>
     <content type="html"><![CDATA[<p>Well, this is my first blog here (right now on github).</p>
 
-<p>I&rsquo;m using the <a href="octopress.org">Octopress</a> as blog content management,
+<p>I&rsquo;m using the <a href="http://octopress.org">Octopress</a> as blog content management,
 and I will briefly describe the way to set it up.</p>
 
 <p>First, go to Octopress <a href="http://octopress.org/docs/setup/">setup page</a>.
@@ -30,9 +30,10 @@ install the dependencies that Octopress will need.</p>
 <p>Then choose the platform that the blog will be hosted on,
 here is a link for <a href="http://octopress.org/docs/deploying/github/">deploying github pages</a>.
 <strong>Note</strong>: a error occured while I followed the instruction to rake it.
-<code>
+<code>bash
 rake aborted!
-You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending `bundle exec` to your command may solve this.
+You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6.
+Prepending `bundle exec` to your command may solve this.
 /Users/Haochen/myBlog/octopress/Rakefile:2:in `&lt;top (required)&gt;'
 (See full trace by running task with --trace)
 </code>
@@ -41,22 +42,23 @@ This error could be easily solved by add <code>bundle exec</code> in front of th
 <p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
 Then type <code>rake deploy</code>.
 Otherwise, there will be some errors:
-<code>
+<code>bash
 error: failed to push some refs to 'git@gihub.com:your github page repo'
 </code></p>
 
 <p>Now, your blog page is on-line.
-However, you still need version control on your Octopress settings, so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.
-<code>
+However, you still need version control on your Octopress settings,
+so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.
+<code>bash
 git add .
 git commit -m 'your message'
 git push origin source
 </code>
 (I&rsquo;d rather put them into a bash file than typing every time)
-<code>bash
+<code>bash git_commit_source.sh
 !/bin/bash
 git add . &amp;&amp;
-git commit -m "$1" &amp;&amp;
+git commit -m "$1" &amp;&amp; #first argument will be the commit message
 git push origin source
 </code></p>
 
@@ -73,7 +75,7 @@ The command <code>rake new-page['404']</code> cannot work on zsh due to &lsquo;[
 Hence, the only way to add cutomize page is to write a markdown file and put into &lsquo;source&rsquo; fold.
 But, do not forget to add the following to the head of page:</p>
 
-<h2>``` </h2>
+<h2>``` bash</h2>
 
 <p>layout: page
 title: &ldquo;Super Awesome&rdquo;
@@ -84,6 +86,66 @@ sharing: true</p>
 <h2>footer: true</h2>
 
 <p>```</p>
+
+<p><strong>Update</strong> (2014-Mar-12):
+<code>rake preview</code> has problem with Safari.
+Don&rsquo;t know why but only show blank page while open <a href="http://localhost:4000">http://localhost:4000</a> .
+Use Chrome or Firefox will solve this.[<a href="https://github.com/imathis/octopress/issues/1395">ref</a>]</p>
+
+<p>Due to save typing, I have written some bash files:
+``` bash deploy.sh</p>
+
+<h1>!/bin/bash</h1>
+
+<p>bundle exec rake generate &amp;&amp;
+bundle exec rake deploy</p>
+
+<p>```</p>
+
+<p>``` bash preview.sh</p>
+
+<h1>!/bin/bash</h1>
+
+<h1>set up the octopress preview</h1>
+
+<h1>open <a href="http://localhost:4000">http://localhost:4000</a> in Chrome</h1>
+
+<h1>Safari has some wired error in it</h1>
+
+<h1>if previous preview is running, stop it</h1>
+
+<p>preview_pid=<code>/bin/ps -fu $USER| grep "rake\ preview" | grep -v "grep" | awk '{print $2}'</code>
+kill -2 $preview_pid</p>
+
+<p>bundle exec rake generate &amp;&amp;
+bundle exec rake preview &amp;</p>
+
+<p>sleep 5 # wait a while to make sure the preview already running</p>
+
+<h1>change the browser command if you are using a different OS and browser</h1>
+
+<p>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &lsquo;<a href="http://localhost:4000">http://localhost:4000</a>&rsquo;</p>
+
+<p>pidof &ldquo;Google Chrome&rdquo; | xargs wait
+preview_pid=<code>/bin/ps -fu $USER| grep "rake\ preview" | grep -v "grep" | awk '{print $2}'</code>
+kill -2 $preview_pid</p>
+
+<h1>echo &ldquo;$preview_pid&rdquo;</h1>
+
+<p>echo &ldquo;Preview DONE!&rdquo;</p>
+
+<p>```
+<strong>Warnning</strong>:
+<del>This preview shell script may not work for you if you are a ruby developer,
+or you are using some programs written or depended in/on ruby or ruby packages,
+because it killed all ruby processes at the end.</del>
+Do not forget to fully quit Chrome (Comman+q in MacOS) before starting a new preview,
+otherwise unknown error would occur (duplicate processes).</p>
+
+<p><del>BTW, the preview.sh also left a messy terminal for you.
+Well, everything have side effects.
+But you could add <code>clear</code> command at the end of the script,
+if you don&rsquo;t really care about the traces.</del></p>
 ]]></content>
   </entry>
   
