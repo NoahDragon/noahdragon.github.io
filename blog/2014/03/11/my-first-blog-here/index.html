@@ -110,12 +110,12 @@ here is a link for <a href="http://octopress.org/docs/deploying/github/">deployi
 
 <blockquote><p>rake aborted!
 You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending <code>bundle exec</code> to your command may solve this.
-/Users/Haochen/myBlog/octopress/Rakefile:2:in `<top (required)>&lsquo;
-(See full trace by running task with &mdash;trace)
-This error could be easily solved by add &#8216;bundle exec&rsquo; in front of the &lsquo;rake&rsquo; command.</p></blockquote>
+/Users/Haochen/myBlog/octopress/Rakefile:2:in <code>&lt;top (required)&gt;'
+(See full trace by running task with --trace)
+This error could be easily solved by add</code>bundle exec<code>in front of the</code>rake` command.</p></blockquote>
 
-<p>After &lsquo;rake generate&rsquo;, go to &lsquo;_deploy&rsquo; folder, and type &lsquo;git pull origin master&rsquo;.
-Then type &lsquo;rake deploy&rsquo;.
+<p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
+Then type <code>rake deploy</code>.
 Otherwise, there will be some errors:</p>
 
 <blockquote><p>error: failed to push some refs to &lsquo;git@gihub.com:your github page repo&rsquo;</p></blockquote>
@@ -134,6 +134,30 @@ Using Octopress can save your time on setting a blog site, and it generates page
 
 <p>This blog is still underconstruction. I would like to make it more simple and pretty.
 K.I.S.S</p>
+
+<p><strong>Update</strong> (several minutes later):
+Encountering a problem of creating single page, e.g. 404.html.
+The command <code>rake new-page['404']</code> cannot work on zsh due to &lsquo;[]&rsquo; is converted.
+Hence, the only way to add cutomize page is to write a markdown file and put into &lsquo;source&rsquo; fold.
+But, do not forget to add the following to the head of page:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: page
+</span><span class='line'>title: "Super Awesome"
+</span><span class='line'>date: 2011-07-03 5:59
+</span><span class='line'>comments: true
+</span><span class='line'>sharing: true
+</span><span class='line'>footer: true
+</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -224,7 +248,7 @@ K.I.S.S</p>
   
 
 <script type="text/javascript">
-      var disqus_shortname = 'abnerchou';
+      var disqus_shortname = 'dreamnavigator';
       
         
         // var disqus_developer = 1;

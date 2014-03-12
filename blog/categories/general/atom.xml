@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | Dream Navigator]]></title>
   <link href="http://NoahDragon.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://NoahDragon.github.io/"/>
-  <updated>2014-03-11T23:59:30-04:00</updated>
+  <updated>2014-03-12T00:27:37-04:00</updated>
   <id>http://NoahDragon.github.io/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -33,12 +33,12 @@ here is a link for <a href="http://octopress.org/docs/deploying/github/">deployi
 
 <blockquote><p>rake aborted!
 You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending <code>bundle exec</code> to your command may solve this.
-/Users/Haochen/myBlog/octopress/Rakefile:2:in `<top (required)>&lsquo;
-(See full trace by running task with &mdash;trace)
-This error could be easily solved by add 'bundle exec&rsquo; in front of the &lsquo;rake&rsquo; command.</p></blockquote>
+/Users/Haochen/myBlog/octopress/Rakefile:2:in <code>&lt;top (required)&gt;'
+(See full trace by running task with --trace)
+This error could be easily solved by add</code>bundle exec<code>in front of the</code>rake` command.</p></blockquote>
 
-<p>After &lsquo;rake generate&rsquo;, go to &lsquo;_deploy&rsquo; folder, and type &lsquo;git pull origin master&rsquo;.
-Then type &lsquo;rake deploy&rsquo;.
+<p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
+Then type <code>rake deploy</code>.
 Otherwise, there will be some errors:</p>
 
 <blockquote><p>error: failed to push some refs to &lsquo;git@gihub.com:your github page repo&rsquo;</p></blockquote>
@@ -57,6 +57,24 @@ Using Octopress can save your time on setting a blog site, and it generates page
 
 <p>This blog is still underconstruction. I would like to make it more simple and pretty.
 K.I.S.S</p>
+
+<p><strong>Update</strong> (several minutes later):
+Encountering a problem of creating single page, e.g. 404.html.
+The command <code>rake new-page['404']</code> cannot work on zsh due to &lsquo;[]&rsquo; is converted.
+Hence, the only way to add cutomize page is to write a markdown file and put into &lsquo;source&rsquo; fold.
+But, do not forget to add the following to the head of page:</p>
+
+<h2>``` </h2>
+
+<p>layout: page
+title: &ldquo;Super Awesome&rdquo;
+date: 2011-07-03 5:59
+comments: true
+sharing: true</p>
+
+<h2>footer: true</h2>
+
+<p>```</p>
 ]]></content>
   </entry>
   
