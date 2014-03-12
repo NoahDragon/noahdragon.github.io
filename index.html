@@ -111,25 +111,38 @@ install the dependencies that Octopress will need.</p>
 here is a link for <a href="http://octopress.org/docs/deploying/github/">deploying github pages</a>.
 <strong>Note</strong>: a error occured while I followed the instruction to rake it.</p>
 
-<blockquote><p>rake aborted!
-You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending <code>bundle exec</code> to your command may solve this.
-/Users/Haochen/myBlog/octopress/Rakefile:2:in <code>&lt;top (required)&gt;'
-(See full trace by running task with --trace)
-This error could be easily solved by add</code>bundle exec<code>in front of the</code>rake` command.</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake aborted!
+</span><span class='line'>You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6. Prepending `bundle exec` to your command may solve this.
+</span><span class='line'>/Users/Haochen/myBlog/octopress/Rakefile:2:in `&lt;top (required)&gt;'
+</span><span class='line'>(See full trace by running task with --trace)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error could be easily solved by add <code>bundle exec</code> in front of the <code>rake</code> command.</p>
 
 <p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
 Then type <code>rake deploy</code>.
 Otherwise, there will be some errors:</p>
 
-<blockquote><p>error: failed to push some refs to &lsquo;git@gihub.com:your github page repo&rsquo;</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>error: failed to push some refs to 'git@gihub.com:your github page repo'</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Now, your blog page is on-line.
 However, you still need version control on your Octopress settings, so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.</p>
 
-<blockquote><p>git add .
-git commit -m &lsquo;your message&rsquo;
-git push origin source
-(I&rsquo;d rather put them into a bash file than typing every time)</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m 'your message'
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(I&rsquo;d rather put them into a bash file than typing every time)</p>
 
 <p>Finally, my blog is here.
 Much easier than I expected.
