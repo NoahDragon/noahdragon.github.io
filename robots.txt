@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://NoahDragon.github.io/sitemap.xml 
