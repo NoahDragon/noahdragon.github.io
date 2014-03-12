@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | Dream Navigator]]></title>
   <link href="http://NoahDragon.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://NoahDragon.github.io/"/>
-  <updated>2014-03-12T00:40:07-04:00</updated>
+  <updated>2014-03-12T14:34:33-04:00</updated>
   <id>http://NoahDragon.github.io/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -52,7 +52,13 @@ git add .
 git commit -m 'your message'
 git push origin source
 </code>
-(I&rsquo;d rather put them into a bash file than typing every time)</p>
+(I&rsquo;d rather put them into a bash file than typing every time)
+<code>bash
+!/bin/bash
+git add . &amp;&amp;
+git commit -m "$1" &amp;&amp;
+git push origin source
+</code></p>
 
 <p>Finally, my blog is here.
 Much easier than I expected.
