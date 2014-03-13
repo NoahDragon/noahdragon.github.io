@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: General | Dream Navigator]]></title>
-  <link href="http://NoahDragon.github.io/blog/categories/general/atom.xml" rel="self"/>
-  <link href="http://NoahDragon.github.io/"/>
-  <updated>2014-03-12T18:03:12-04:00</updated>
-  <id>http://NoahDragon.github.io/</id>
+  <link href="http://abnerchou.me/blog/categories/general/atom.xml" rel="self"/>
+  <link href="http://abnerchou.me/"/>
+  <updated>2014-03-13T00:57:14-04:00</updated>
+  <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My First Blog Here]]></title>
-    <link href="http://NoahDragon.github.io/blog/2014/03/11/my-first-blog-here/"/>
+    <link href="http://abnerchou.me/blog/2014/03/11/my-first-blog-here/"/>
     <updated>2014-03-11T22:52:09-04:00</updated>
-    <id>http://NoahDragon.github.io/blog/2014/03/11/my-first-blog-here</id>
+    <id>http://abnerchou.me/blog/2014/03/11/my-first-blog-here</id>
     <content type="html"><![CDATA[<p>Well, this is my first blog here (right now on github).</p>
 
 <p>I&rsquo;m using the <a href="http://octopress.org">Octopress</a> as blog content management,
@@ -29,7 +29,7 @@ install the dependencies that Octopress will need.</p>
 
 <p>Then choose the platform that the blog will be hosted on,
 here is a link for <a href="http://octopress.org/docs/deploying/github/">deploying github pages</a>.
-<strong>Note</strong>: a error occured while I followed the instruction to rake it.
+<strong>Note</strong>: an error occured while I followed the instruction to rake it.
 <code>bash
 rake aborted!
 You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6.
@@ -37,7 +37,7 @@ Prepending `bundle exec` to your command may solve this.
 /Users/Haochen/myBlog/octopress/Rakefile:2:in `&lt;top (required)&gt;'
 (See full trace by running task with --trace)
 </code>
-This error could be easily solved by add <code>bundle exec</code> in front of the <code>rake</code> command.</p>
+This error could be easily solved by adding <code>bundle exec</code> in front of the <code>rake</code> command.</p>
 
 <p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
 Then type <code>rake deploy</code>.
@@ -47,8 +47,9 @@ error: failed to push some refs to 'git@gihub.com:your github page repo'
 </code></p>
 
 <p>Now, your blog page is on-line.
-However, you still need version control on your Octopress settings,
-so don&rsquo;t forget to commit the &lsquo;source&rsquo; directory.
+Although the pages are hosted on github,
+you still need version control on your Octopress settings,
+so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.
 <code>bash
 git add .
 git commit -m 'your message'
@@ -70,7 +71,7 @@ Using Octopress can save your time on setting a blog site, and it generates page
 K.I.S.S</p>
 
 <p><strong>Update</strong> (several minutes later):
-Encountering a problem of creating single page, e.g. 404.html.
+Encountered a problem of creating single page, e.g. 404.html.
 The command <code>rake new-page['404']</code> cannot work on zsh due to &lsquo;[]&rsquo; is converted.
 Hence, the only way to add cutomize page is to write a markdown file and put into &lsquo;source&rsquo; fold.
 But, do not forget to add the following to the head of page:</p>
@@ -90,7 +91,7 @@ sharing: true</p>
 <p><strong>Update</strong> (2014-Mar-12):
 <code>rake preview</code> has problem with Safari.
 Don&rsquo;t know why but only show blank page while open <a href="http://localhost:4000">http://localhost:4000</a> .
-Use Chrome or Firefox will solve this.[<a href="https://github.com/imathis/octopress/issues/1395">ref</a>]</p>
+Using Chrome or Firefox will solve this.[<a href="https://github.com/imathis/octopress/issues/1395">ref</a>]</p>
 
 <p>Due to save typing, I have written some bash files:
 ``` bash deploy.sh</p>
@@ -134,13 +135,16 @@ kill -2 $preview_pid</p>
 
 <p>echo &ldquo;Preview DONE!&rdquo;</p>
 
-<p>```
-<strong>Warnning</strong>:
-<del>This preview shell script may not work for you if you are a ruby developer,
+<p>```</p>
+
+<p>Please ignore the text below, the latest code fixes all of them. :P</p>
+
+<p><del><strong>Warnning</strong>:
+This preview shell script may not work for you if you are a ruby developer,
 or you are using some programs written or depended in/on ruby or ruby packages,
-because it killed all ruby processes at the end.</del>
+because it killed all ruby processes at the end.
 Do not forget to fully quit Chrome (Comman+q in MacOS) before starting a new preview,
-otherwise unknown error would occur (duplicate processes).</p>
+otherwise unknown error would occur (duplicate processes).</del></p>
 
 <p><del>BTW, the preview.sh also left a messy terminal for you.
 Well, everything have side effects.
