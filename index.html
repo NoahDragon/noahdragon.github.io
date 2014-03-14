@@ -17,9 +17,9 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="text/script">
+  <script type="text/javascript">
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent.toLowerCase()) ) {
-    document.location = "http://abnerchou.me/blog"
+    document.location = "http://abnerchou.me/blog";
   }
   </script>
   
@@ -45,7 +45,7 @@
   var images = new Array('header1.jpg','header2.jpg','header3.jpg')
   function changeBackgroundImage(){
     var image_url = "../images/" + images[Math.floor(Math.random()*images.length)];
-    $('html').css('background-image', 'url('+image_url+')')
+    $('html').css('background-image', 'url('+image_url+')');
   }
   window.onload = changeBackgroundImage;
   </script>
