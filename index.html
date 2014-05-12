@@ -19,7 +19,7 @@
 
   <script type="text/javascript">
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent.toLowerCase()) ) {
-    document.location = "http://abnerchou.me/blog";
+    document.location = "/blog";
   }
   </script>
   
@@ -44,7 +44,8 @@
   <script type="text/javascript">
   var images = new Array('header1.jpg','header2.jpg','header3.jpg')
   function changeBackgroundImage(){
-    var image_url = "../images/" + images[Math.floor(Math.random()*images.length)];
+    var i = images.length;
+    var image_url = "../images/" + images[Math.floor(Math.random()*i)];
     $('html').css('background-image', 'url('+image_url+')');
   }
   window.onload = changeBackgroundImage;
