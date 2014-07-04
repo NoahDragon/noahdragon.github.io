@@ -251,6 +251,8 @@ so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>, however, as I mentioned before the rake wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match. We could use <code>bundle exec rake</code> to run the command. Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
+
 <p>Finally, my blog is here.
 Much easier than I expected.
 Using Octopress can save your time on setting a blog site, and it generates pages automatically.</p>

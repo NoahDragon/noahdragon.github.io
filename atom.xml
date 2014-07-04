@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-07-02T23:49:15-04:00</updated>
+  <updated>2014-07-04T18:43:58-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -121,6 +121,8 @@ so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.</p>
 </span><span class='line'>git push origin <span class="nb">source</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>, however, as I mentioned before the rake wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match. We could use <code>bundle exec rake</code> to run the command. Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
 
 <p>Finally, my blog is here.
 Much easier than I expected.
