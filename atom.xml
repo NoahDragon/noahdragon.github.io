@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-07-04T18:43:58-04:00</updated>
+  <updated>2014-07-12T23:23:32-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -12,6 +12,189 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Set Up VPN With Transparent Proxy on DigitalOcean]]></title>
+    <link href="http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean/"/>
+    <updated>2014-07-12T20:43:47-04:00</updated>
+    <id>http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean</id>
+    <content type="html"><![CDATA[<p>Recently I just rent a VPS on <a href="https://www.digitalocean.com">Digital Ocean</a>,
+which is cheap for a student and who is price sensitive.
+As it gives you all the controls of an OS, it likes a remote compute machine.
+Meanwhile, you could do anything as you have your own server.</p>
+
+<p>Therefore, it comes to my mind to create a VPN server.
+VPN is a virtual private network that extends a private network across a public network,
+which usually used to bypass firewalls or increase access speed.
+Proxy is a server that acts as an intermediary for requests from clients seeking resources from other servers.
+It needs to be set in software application&rsquo;s configuration.
+VPN and Proxy both could hide your ip.
+The differences between them are listed following:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left">                  </th>
+<th align="center">VPN                                                        </th>
+<th align="center">Proxy                                         </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left">Protocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="center">Support any Protocols</td>
+<td align="center">Support certain Protocols, such as HTTP, SOCKS</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Softwares         </td>
+<td align="center">Any softwares that can run on the machine &nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="center">Softwares support proxy configuration</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Price             </td>
+<td align="center">High if you rent from vpn provider</td>
+<td align="center">Low</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Speed             </td>
+<td align="center">Varies depend on number of users<br/>usually depends on servers </td>
+<td align="center">Depend on servers</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">Security          </td>
+<td align="center">Encryption (128-bit to 2048-bit)</td>
+<td align="center">Not encrypted</td>
+</tr>
+</tbody>
+</table>
+
+
+<br/>
+
+
+<p>Because of the encryption, every accesses through VPN retrive the objects directly from the source.
+This could slow down the user experience when hits a same object multiple times, such as icons in a webpage.
+If there is a way that could cache web objects into VPN server, that will significantly increase the access speed, which get objects from local disk instead of downloading from source website.
+Here, I should introduce the transparent proxy, which usually sets on the gateway and caches content from WWW requests.
+It calls transparent because client side does not need any configuration.
+Hence, every WWW requests through VPN need go to transparent proxy.</p>
+
+<p>This installation guide is tested on Ubuntu 14.04 64bit.
+VPN is set up by <a href="http://en.wikipedia.org/wiki/Point-to-Point_Tunneling_Protocol">pptp</a>.
+Transparent proxy is on <a href="http://www.squid-cache.org">Squid3</a>.</p>
+
+<ul>
+<li><strong>pptp installation</strong></li>
+</ul>
+
+
+<p>In terminal, type the command bellow to install pptp server:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install pptpd</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To restrict user access your VPN server, you also need to add users and passwords in <code>/etc/ppp/chap-secets</code>.
+In the client column is user&rsquo;s name, the secret column is for passwords.
+I masked mine for privacy.</p>
+
+<p><img src="http://abnerchou.me/blog_pics/user_password.jpg" alt="Set user and password"/></p>
+
+<p>Add the following DNS to <code>/etc/ppp/pptpd-options</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ms-dns 8.8.8.8
+</span><span class='line'>ms-dns 8.8.4.4</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Restart pptp server by command <code>service pptpd restart</code>. Check if it is running by <code>netstat -alpn | grep :1723</code>.</p>
+
+<p>You also should enable the IP forwarding on your pptp server.
+This would transfer the package between public ip and private ips on your server.
+Open <code>/etc/sysctl.conf</code>, add the following line if not exist: <code>net.ipv4.ip_forward = 1</code>.
+Then run <code>sysctl -p</code> to make the change effective.</p>
+
+<p>Create NAT rule for iptables, and your VPN is ready to use:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iptables --table nat --append POSTROUTING -o eth0 -j MASQUERADE && iptables-save</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><strong>Squid3 installation</strong></li>
+</ul>
+
+
+<p>Similar to pptpd, typing the following in terminal:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install squid
+</span><span class='line'>update-rc.d squid3 defaults</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The proxy is usable, but it is the normal proxy.
+To change it to transparent proxy, we need to edit the <code>/etc/squid3/squid.conf</code> file.
+The squid.conf follows the rules of allow/deny order.
+It obeys the first come first serve, the first matched rule will apply.
+For example, if you put &ldquo;deny all&rdquo; at the first line of squid.conf, then the proxy denies all request.
+If a rule does not indicate in squid.conf, then it defaults as deny.</p>
+
+<p>First, find the line <code>http_port 3128</code>, change it to <code>http_port 3128 transparent</code>.</p>
+
+<p>Second, add the following rules:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>acl myhost src 192.168.0.1
+</span><span class='line'>http_access allow myhost
+</span><span class='line'>acl mymachine src 10.0.0.0/16
+</span><span class='line'>http_access allow mymachine</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The &lsquo;192.168.0.1&rsquo; is my public ip, and the &lsquo;10.0.0.0/16&rsquo; is my private ips.
+Restart squid <code>sudo service squid3 restart</code>.</p>
+
+<p>Finally, we set the iptables to redirect all the traffic through 80 port to 3128 port that is our transparent proxy.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iptables -t nat -A PREROUTING -i ppp0 -p tcp -m tcp --dport 80 -j REDIRECT --to-port 3128</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The transparent proxy is set up.</p>
+
+<ul>
+<li><strong>Restore iptables rules while system start up</strong></li>
+</ul>
+
+
+<p>Right now, you couldn&rsquo;t restart the system, otherwise the iptables will be set to empty again.
+But you can input the previous iptables commands again to solve this.</p>
+
+<p>Here I introduce a method that will do it once and for all.</p>
+
+<p>Save iptables into <code>/etc/network/iptables.rules</code> by <code>iptables-save &gt; /etc/network/iptables.rules</code></p>
+
+<p>Open <code>/etc/rc.local</code> and add the following line before &ldquo;exit 0&rdquo;:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/sbin/iptables-restore &lt; /etc/network/iptables.rules</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then our saved iptables rules will be loaded every time the system start up.</p>
+
+<p>Enjoy your VPN server with transparent proxy!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why Sun Is the Center of Our Solar System]]></title>
@@ -24,7 +207,7 @@ Why the Earth could not be the center?</p>
 
 <p>Actually it could.
 As we learn in physic, all motions are relative, like we feel we are still on the Earth, but we actually spin and orbit the Sun.
-Moreover, we orbit the Sun, in another words that the Sun is also orbit us.
+Moreover, we orbit the Sun, in another words that the Sun also orbits us.
 This doesn&rsquo;t conflict with motion relative law.
 But why we are not saying the Sun is orbiting Earth?</p>
 
@@ -122,7 +305,10 @@ so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>, however, as I mentioned before the rake wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match. We could use <code>bundle exec rake</code> to run the command. Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
+<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>.
+However, as I mentioned before the <code>rake</code> command wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match.
+We could use <code>bundle exec rake</code> to run the command.
+Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
 
 <p>Finally, my blog is here.
 Much easier than I expected.

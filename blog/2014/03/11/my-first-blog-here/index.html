@@ -177,7 +177,10 @@ so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>, however, as I mentioned before the rake wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match. We could use <code>bundle exec rake</code> to run the command. Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
+<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>.
+However, as I mentioned before the <code>rake</code> command wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match.
+We could use <code>bundle exec rake</code> to run the command.
+Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
 
 <p>Finally, my blog is here.
 Much easier than I expected.
@@ -320,7 +323,7 @@ if you don&rsquo;t really care about the traces.</del></p>
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/general/'>General</a>
+    <a class='category' href='/blog/categories/blog/'>Blog</a>, <a class='category' href='/blog/categories/general/'>General</a>, <a class='category' href='/blog/categories/octopress/'>Octopress</a>
   
 </span>
 
@@ -362,6 +365,10 @@ if you don&rsquo;t really care about the traces.</del></p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean/">Set Up VPN With Transparent Proxy on DigitalOcean</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/07/02/why-sun-is-the-center-of-our-solar-system/">Why Sun Is the Center of Our Solar System</a>

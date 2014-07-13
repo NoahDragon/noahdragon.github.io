@@ -2,11 +2,17 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://abnerchou.me/blog/2014/03/11/my-first-blog-here/</loc>
-        <lastmod>2014-07-04T18:42:37-04:00</lastmod>
+        <lastmod>2014-07-12T20:46:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/blog/2014/07/02/why-sun-is-the-center-of-our-solar-system/</loc>
-        <lastmod>2014-07-02T23:47:25-04:00</lastmod>
+        <lastmod>2014-07-12T20:46:55-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean/
+        </loc>
+        <lastmod>2014-07-12T23:21:45-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/404.html</loc>
@@ -18,19 +24,19 @@
     </url>
     <url>
         <loc>http://abnerchou.me/archives/</loc>
-        <lastmod>2014-07-04T18:42:37-04:00</lastmod>
+        <lastmod>2014-07-12T23:21:45-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/blog/archives/</loc>
-        <lastmod>2014-07-04T18:42:37-04:00</lastmod>
+        <lastmod>2014-07-12T23:21:45-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/blog/</loc>
-        <lastmod>2014-07-04T18:42:37-04:00</lastmod>
+        <lastmod>2014-07-12T23:21:45-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/</loc>
-        <lastmod>2014-07-04T18:42:37-04:00</lastmod>
+        <lastmod>2014-07-12T23:21:45-04:00</lastmod>
     </url>
     <url>
         <loc>http://abnerchou.me/robots.txt</loc>
