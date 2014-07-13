@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Proxy | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/proxy/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-07-12T23:23:32-04:00</updated>
+  <updated>2014-07-12T23:42:03-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -131,14 +131,15 @@ iptables --table nat --append POSTROUTING -o eth0 -j MASQUERADE &amp;&amp; iptab
 sudo apt-get install squid
 update-rc.d squid3 defaults
 </code>
-The proxy is usable, but it is the normal proxy.
+The proxy is usable now, but it is the normal proxy with default settings.
 To change it to transparent proxy, we need to edit the <code>/etc/squid3/squid.conf</code> file.
 The squid.conf follows the rules of allow/deny order.
 It obeys the first come first serve, the first matched rule will apply.
 For example, if you put &ldquo;deny all&rdquo; at the first line of squid.conf, then the proxy denies all request.
 If a rule does not indicate in squid.conf, then it defaults as deny.</p>
 
-<p>First, find the line <code>http_port 3128</code>, change it to <code>http_port 3128 transparent</code>.</p>
+<p>First, find the line <code>http_port 3128</code>, change it to <code>http_port 3128 transparent</code>.
+<strong> this is important </strong></p>
 
 <p>Second, add the following rules:
 <code>
