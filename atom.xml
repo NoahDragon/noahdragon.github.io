@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-07-25T17:28:54-04:00</updated>
+  <updated>2014-08-05T18:37:33-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[An Online Hacker Game]]></title>
+    <link href="http://abnerchou.me/blog/2014/08/05/an-online-hacker-game/"/>
+    <updated>2014-08-05T18:22:48-04:00</updated>
+    <id>http://abnerchou.me/blog/2014/08/05/an-online-hacker-game</id>
+    <content type="html"><![CDATA[<p>You could start the game from <a href="http://fun.coolshell.cn">here</a>, hosted by <a href="http://coolshell.cn">coolshell.cn</a>.</p>
+
+<p>Don&rsquo;t hesitate to use google and wikipedia to solve the puzzles.</p>
+
+<p>I have posted hints and solutions on <a href="https://github.com/NoahDragon/fun.coolshell.cn">my github</a>, use them wisely when you get difficulties.</p>
+
+<p>Enjoy :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Set Up VPN With Transparent Proxy on DigitalOcean]]></title>
