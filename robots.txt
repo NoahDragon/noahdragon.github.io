@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 
-Sitemap: http://abnerchou.me/sitemap.xml 
+Sitemap: http://abnerchou.me/sitemap.xml

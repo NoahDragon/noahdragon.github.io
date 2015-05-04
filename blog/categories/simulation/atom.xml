@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Simulation | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/simulation/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-08-05T18:37:33-04:00</updated>
+  <updated>2015-05-03T22:00:05-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -40,7 +40,7 @@ After long enough years, the orbit will look like below picture:</p>
 
 <p>It&rsquo;s totally mess!</p>
 
-<p>This simulated program assumes the planets' orbit is circle and in the same surface.
+<p>This simulated program assumes the planets&#8217; orbit is circle and in the same surface.
 In our real solar system, it is way more complicate.</p>
 
 <p>I didn&rsquo;t do the history research about why heliocentrism won the theory battle.

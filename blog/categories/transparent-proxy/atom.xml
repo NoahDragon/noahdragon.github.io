@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Transparent Proxy | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/transparent-proxy/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2014-08-05T18:37:33-04:00</updated>
+  <updated>2015-05-03T22:00:05-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -31,52 +31,14 @@ It needs to be set in software application&rsquo;s configuration.
 VPN and Proxy both could hide your ip.
 The differences between them are listed following:</p>
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th align="left">                  </th>
-<th align="center">VPN                                                        </th>
-<th align="center">Proxy                                         </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td align="left">Protocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td align="center">Support any Protocols</td>
-<td align="center">Support certain Protocols, such as HTTP, SOCKS</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">Softwares         </td>
-<td align="center">Any softwares that can run on the machine &nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td align="center">Softwares support proxy configuration</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">Price             </td>
-<td align="center">High if you rent from vpn provider</td>
-<td align="center">Low</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">Speed             </td>
-<td align="center">Varies depend on number of users<br/>usually depends on servers </td>
-<td align="center">Depend on servers</td>
-</tr>
-<tr>
-<td></td>
-<td align="left">Security          </td>
-<td align="center">Encryption (128-bit to 2048-bit)</td>
-<td align="center">Not encrypted</td>
-</tr>
-</tbody>
-</table>
-
-
-<br/>
-
+<p>|                  |VPN                                                        |Proxy                                         |
+|:&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;:|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;:|
+|Protocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Support any Protocols|Support certain Protocols, such as HTTP, SOCKS
+|Softwares         |Any softwares that can run on the machine &nbsp;&nbsp;&nbsp;&nbsp;|Softwares support proxy configuration
+|Price             |High if you rent from vpn provider|Low
+|Speed             |Varies depend on number of users<br/>usually depends on servers |Depend on servers
+|Security          |Encryption (128-bit to 2048-bit)|Not encrypted
+<br/></p>
 
 <p>Because of the encryption, every accesses through VPN retrive the objects directly from the source.
 This could slow down the user experience when hits a same object multiple times, such as icons in a webpage.
