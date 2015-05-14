@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://abnerchou.me/cn/blog/2015/05/12/some-info-about-build-a-website/</loc>
+    <lastmod>2015-05-12T22:52:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://abnerchou.me/blog/2014/08/05/an-online-hacker-game/</loc>
     <lastmod>2014-08-05T18:22:48-04:00</lastmod>
   </url>
@@ -20,13 +24,22 @@
     <loc>http://abnerchou.me/404.html</loc>
   </url>
   <url>
+    <loc>http://abnerchou.me/cn/archives/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/cn/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/cn/about/</loc>
+  </url>
+  <url>
     <loc>http://abnerchou.me/archives/</loc>
   </url>
   <url>
-    <loc>http://abnerchou.me/</loc>
+    <loc>http://abnerchou.me/blog/</loc>
   </url>
   <url>
-    <loc>http://abnerchou.me/blog/</loc>
+    <loc>http://abnerchou.me/</loc>
   </url>
   <url>
     <loc>http://abnerchou.me/blog/archives/</loc>
@@ -72,5 +85,38 @@
   </url>
   <url>
     <loc>http://abnerchou.me/blog/categories/vps/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/hacker-game/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/programming/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/build-website/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/github/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/digital-ocean/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/namecheap/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/godaddy/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/jekyll/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/disqus/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/google-site/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/wordpress/</loc>
   </url>
 </urlset>
