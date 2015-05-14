@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-05-13T22:09:53-04:00</updated>
+  <updated>2015-05-13T22:24:00-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -60,7 +60,7 @@
 
 <p>Enjoy :)</p>
 
-<p><img src="http://abnerchou.me/blog_pics/online_hacker_game.PNG" alt="Rank 49"/></p>
+<p><img src="http://abnerchou.me/images/pics/online_hacker_game.PNG" alt="Rank 49"/></p>
 
 <p>A little bit show off and keep a record.</p>
 ]]></content>
@@ -119,7 +119,7 @@ Transparent proxy is on <a href="http://www.squid-cache.org">Squid3</a>.</p>
 In the client column is user&rsquo;s name, the secret column is for passwords.
 I masked mine for privacy.</p>
 
-<p><img src="http://abnerchou.me/blog_pics/user_password.jpg" alt="Set user and password"/></p>
+<p><img src="http://abnerchou.me/images/pics/user_password.jpg" alt="Set user and password"/></p>
 
 <p>Add the following DNS to <code>/etc/ppp/pptpd-options</code>:</p>
 
@@ -235,7 +235,7 @@ You could click to switch the systems, and draw the orbit path for better viewin
 Untile we draw their path, only the Sun&rsquo;s orbit is circle, the other planet tracks are like spiral.
 After long enough years, the orbit will look like below picture:</p>
 
-<p><img src="http://abnerchou.me/blog_pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
+<p><img src="http://abnerchou.me/images/pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
 
 <p>It&rsquo;s totally mess!</p>
 
