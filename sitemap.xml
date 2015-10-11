@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://abnerchou.me/cn/blog/2015/10/10/frozen-heart-cracked-plot/</loc>
+    <lastmod>2015-10-10T20:15:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://abnerchou.me/cn/blog/2015/05/12/some-info-about-build-a-website/</loc>
     <lastmod>2015-05-12T22:52:00-04:00</lastmod>
   </url>
@@ -93,30 +97,12 @@
     <loc>http://abnerchou.me/blog/categories/programming/</loc>
   </url>
   <url>
-    <loc>http://abnerchou.me/blog/categories/build-website/</loc>
+    <loc>http://abnerchou.me/blog/categories/website/</loc>
   </url>
   <url>
-    <loc>http://abnerchou.me/blog/categories/github/</loc>
+    <loc>http://abnerchou.me/blog/categories/frozen/</loc>
   </url>
   <url>
-    <loc>http://abnerchou.me/blog/categories/digital-ocean/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/namecheap/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/godaddy/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/jekyll/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/disqus/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/google-site/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/wordpress/</loc>
+    <loc>http://abnerchou.me/blog/categories/movie-review/</loc>
   </url>
 </urlset>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Vpn | Dream Navigator]]></title>
+  <title><![CDATA[Category: vpn | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/vpn/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-10-07T23:17:41-04:00</updated>
+  <updated>2015-10-10T22:26:43-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Set Up VPN With Transparent Proxy on DigitalOcean]]></title>
+    <title type="html"><![CDATA[Set up VPN with transparent proxy on DigitalOcean]]></title>
     <link href="http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean/"/>
     <updated>2014-07-12T20:43:47-04:00</updated>
     <id>http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean</id>
@@ -64,7 +64,7 @@ To restrict user access your VPN server, you also need to add users and password
 In the client column is user&rsquo;s name, the secret column is for passwords.
 I masked mine for privacy.</p>
 
-<p><img src="/images/pics/user_password.jpg" alt="Set user and password"/></p>
+<p><img src="{{ root_url }}/images/pics/user_password.jpg" alt="Set user and password"/></p>
 
 <p>Add the following DNS to <code>/etc/ppp/pptpd-options</code>:
 <code>

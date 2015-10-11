@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Hacker Game | Dream Navigator]]></title>
+  <title><![CDATA[Category: hacker game | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/hacker-game/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-10-07T23:17:41-04:00</updated>
+  <updated>2015-10-10T22:26:43-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -26,7 +26,7 @@
 
 <p>Enjoy :)</p>
 
-<p><img src="/images/pics/online_hacker_game.PNG" alt="Rank 49"/></p>
+<p><img src="{{ root_url }}/images/pics/online_hacker_game.PNG" alt="Rank 49"/></p>
 
 <p>A little bit show off and keep a record.</p>
 ]]></content>

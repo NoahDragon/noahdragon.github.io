@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Simulation | Dream Navigator]]></title>
+  <title><![CDATA[Category: simulation | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/simulation/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-10-07T23:17:41-04:00</updated>
+  <updated>2015-10-10T22:26:43-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Why Sun Is the Center of Our Solar System]]></title>
+    <title type="html"><![CDATA[Why Sun is the center of our solar system]]></title>
     <link href="http://abnerchou.me/blog/2014/07/02/why-sun-is-the-center-of-our-solar-system/"/>
     <updated>2014-07-02T22:44:44-04:00</updated>
     <id>http://abnerchou.me/blog/2014/07/02/why-sun-is-the-center-of-our-solar-system</id>
@@ -36,7 +36,7 @@ You could click to switch the systems, and draw the orbit path for better viewin
 Untile we draw their path, only the Sun&rsquo;s orbit is circle, the other planet tracks are like spiral.
 After long enough years, the orbit will look like below picture:</p>
 
-<p><img src="/images/pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
+<p><img src="{{ root_url }}/images/pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
 
 <p>It&rsquo;s totally mess!</p>
 
