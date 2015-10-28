@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-10-27T22:36:42-04:00</updated>
+  <updated>2015-10-27T23:47:50-04:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -36,7 +36,7 @@ You could click to switch the systems, and draw the orbit path for better viewin
 Untile we draw their path, only the Sun&rsquo;s orbit is circle, the other planet tracks are like spiral.
 After long enough years, the orbit will look like below picture:</p>
 
-<p><img src="{{ root_url }}/images/pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
+<p><img src="/images/pics/geocentric.jpg" alt="Geocentric system orbits"/></p>
 
 <p>It&rsquo;s totally mess!</p>
 
