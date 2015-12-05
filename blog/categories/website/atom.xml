@@ -4,7 +4,7 @@
   <title><![CDATA[Category: website | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/website/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-12-05T08:36:16-05:00</updated>
+  <updated>2015-12-05T09:24:20-05:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -25,6 +25,9 @@
 <p>静态网站：<a href="https://github.com/">Github</a> 的page功能就足以搭建一个像样的静态页面了。这里有个不错的教程。
 优点：免费，无限流量，几乎无当机的现象，轻松备份（使用git）
 缺点：无法支持动态页面（比如留言功能），整站内容可以被他人轻松拷贝（git clone）</p>
+
+<!-- more -->
+
 
 <p>动态网站：与其购买支持PHP或ASP的空间，不如在<a href="https://www.digitalocean.com/">Digital Ocean</a>上买个VPS. 每月只需$5, 20Gb SSD硬盘，而且1TB的流量，对于个人网站来说是绰绰有余。
 优点：支持各种网站模式，如同私有服务器；可选操作系统；有亚洲、欧洲、美国机房；SSD硬盘，系统安装备份速度快；专有IP

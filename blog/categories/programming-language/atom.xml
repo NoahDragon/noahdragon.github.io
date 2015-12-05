@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming language | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/programming-language/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-12-05T08:36:16-05:00</updated>
+  <updated>2015-12-05T09:24:20-05:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -27,6 +27,9 @@
 <p>重点是这个Programming Challenges， 也就是说给定题目，让用户来解题，支持如上列出的多种语言，但不支持第三方库。</p>
 
 <p>这个编程语言排行也是根据用户解题时所用语言而制作出来的。所以这个排行无法看作是计算机行业对编程语言的需求。</p>
+
+<!-- more -->
+
 
 <p>就个人体验而言，在其上解题的用户有以下几种特征：</p>
 

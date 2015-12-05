@@ -4,7 +4,7 @@
   <title><![CDATA[Category: andriod | Dream Navigator]]></title>
   <link href="http://abnerchou.me/blog/categories/andriod/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-12-05T08:36:16-05:00</updated>
+  <updated>2015-12-05T09:24:20-05:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -25,6 +25,9 @@
 <p>这个程序的灵感来源<a href="http://www.bilibili.tv/video/av984435/">MikeZTM</a>在其游戏视频中说的一句话，于是就想在Android上实现一下怎样呢？</p>
 
 <p>MikeZTM说的是做一个App，就显示信息提示，其它什么都不做，看强迫症怎么办？</p>
+
+<!-- more -->
+
 
 <p><img src="http://images.cnitblog.com/blog/605265/201402/272304084071686.jpg" alt="ios" height="107" width="320" align="absmiddle" /></p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-12-05T08:36:16-05:00</updated>
+  <updated>2015-12-05T09:24:20-05:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -23,6 +23,9 @@
 <p>最近《冰雪奇缘》出奇的火爆，不少人向我推荐。而且在网上听了其主题曲<a href="http://v.youku.com/v_show/id_XNjQ1MTIwMzc2.html?s=105941">《Let it go》</a>（另推荐<a href="http://www.bilibili.tv/video/av922328/">25国语言版</a>），被歌词深深的震撼了。</p>
 
 <p>电影开场就让人飙泪一把：当安娜坐在爱丽莎的门口反复唱“你想不想堆雪人”，并在空旷的客厅玩耍；身为独生子女能深刻的体会这欢乐背后的孤独，更何况还是有姐姐的呢。</p>
+
+<!-- more -->
+
 
 <p>但此感动转瞬即逝，其后的情节虽跌宕起伏，笑料不断，但看完后比较困惑，不少情节让人难以理解。</p>
 
@@ -59,6 +62,9 @@
 <p>静态网站：<a href="https://github.com/">Github</a> 的page功能就足以搭建一个像样的静态页面了。这里有个不错的教程。
 优点：免费，无限流量，几乎无当机的现象，轻松备份（使用git）
 缺点：无法支持动态页面（比如留言功能），整站内容可以被他人轻松拷贝（git clone）</p>
+
+<!-- more -->
+
 
 <p>动态网站：与其购买支持PHP或ASP的空间，不如在<a href="https://www.digitalocean.com/">Digital Ocean</a>上买个VPS. 每月只需$5, 20Gb SSD硬盘，而且1TB的流量，对于个人网站来说是绰绰有余。
 优点：支持各种网站模式，如同私有服务器；可选操作系统；有亚洲、欧洲、美国机房；SSD硬盘，系统安装备份速度快；专有IP
@@ -109,6 +115,9 @@
 which is cheap for a student and who is price sensitive.
 As it gives you all the controls of an OS, it likes a remote compute machine.
 Meanwhile, you could do anything as you have your own server.</p>
+
+<!-- more -->
+
 
 <p>Therefore, it comes to my mind to create a VPN server.
 VPN is a virtual private network that extends a private network across a public network,
@@ -261,6 +270,9 @@ Moreover, we orbit the Sun, in another words that the Sun also orbits us.
 This doesn&rsquo;t conflict with motion relative law.
 But why we are not saying the Sun is orbiting Earth?</p>
 
+<!-- more -->
+
+
 <p>So let&rsquo;s see how the planets move during heliocentric system and geocentric system.
 Here is the link: <a href="http://noahdragon.github.io/SolarSystem.js/">SolarSystem.js</a>.
 You could click to switch the systems, and draw the orbit path for better viewing.</p>
@@ -295,6 +307,9 @@ Otherwise, I couldn&rsquo;t image how hard the job is for a mathematician to com
 
 <p>I&rsquo;m using the <a href="http://octopress.org">Octopress</a> as blog content management,
 and I will briefly describe the way to set it up.</p>
+
+<!-- more -->
+
 
 <p>First, go to Octopress <a href="http://octopress.org/docs/setup/">setup page</a>.
 Follow the instruction,
@@ -490,6 +505,9 @@ if you don&rsquo;t really care about the traces.</del></p>
 
 <p>MikeZTM说的是做一个App，就显示信息提示，其它什么都不做，看强迫症怎么办？</p>
 
+<!-- more -->
+
+
 <p><img src="http://images.cnitblog.com/blog/605265/201402/272304084071686.jpg" alt="ios" height="107" width="320" align="absmiddle" /></p>
 
 <p>这是ios系统特有的一种功能，想着挺简单的一个实现啊，那就做做试试吧。</p>
@@ -536,6 +554,9 @@ if you don&rsquo;t really care about the traces.</del></p>
 <p>重点是这个Programming Challenges， 也就是说给定题目，让用户来解题，支持如上列出的多种语言，但不支持第三方库。</p>
 
 <p>这个编程语言排行也是根据用户解题时所用语言而制作出来的。所以这个排行无法看作是计算机行业对编程语言的需求。</p>
+
+<!-- more -->
+
 
 <p>就个人体验而言，在其上解题的用户有以下几种特征：</p>
 
@@ -594,6 +615,9 @@ if you don&rsquo;t really care about the traces.</del></p>
 
 
 <p>Markdown模式已经非常方便了。但对于程序员可能更希望使用自己平时写代码的工具来写博客。这就需要简书开放接口，一是可以满足程序员的Geek情节；二是促进简书的发展，吸引程序员开发相关应用。</p>
+
+<!-- more -->
+
 
 <ul>
 <li>网站帮助联系信息要拖到网页最下才可看到</li>
@@ -748,6 +772,9 @@ if you don&rsquo;t really care about the traces.</del></p>
 
 <p>总结一下，原文主要说了IT行业以下几个缺点：</p>
 
+<!-- more -->
+
+
 <ul>
 <li>自负自大</li>
 <li>崇拜权威</li>
@@ -789,6 +816,9 @@ if you don&rsquo;t really care about the traces.</del></p>
 <p>简书是什么？是<a href="http://www.tumblr.com">Tumblr</a>么？这是我听到简书这两个字时的第一反应。（事实也证明确有渊源）</p>
 
 <p>怎么发现简书的呢？这要从最近的琐事说起了。前几日突然想起落满灰尘的RSS，打开Google Reader，竟被告知已关闭。而且连备份也没有，不由得郁闷。于是又在Mac上鼓捣了一下午的Feed Reader。功夫不负有心人，终于把以前订阅的所有RSS都找到了（总共也没几个）。</p>
+
+<!-- more -->
+
 
 <p>但是怎么发现简书的呢？通过RSS读到了关于一个叫<a href="http://news.dbanotes.net/">Startup News</a>的网站，和国外的<a href="https://news.ycombinator.com/">Hacker News</a>类似。于是激动得就订阅了。然后就看到简叔的关于微信的文章。进来后就被吸引得无法自拔。然后就注册了简书号。然后就觉得应该写点什么。然后……</p>
 
