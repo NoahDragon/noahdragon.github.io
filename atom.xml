@@ -4,7 +4,7 @@
   <title><![CDATA[Dream Navigator]]></title>
   <link href="http://abnerchou.me/atom.xml" rel="self"/>
   <link href="http://abnerchou.me/"/>
-  <updated>2015-12-04T09:07:36-05:00</updated>
+  <updated>2015-12-04T22:28:43-05:00</updated>
   <id>http://abnerchou.me/</id>
   <author>
     <name><![CDATA[Abner Chou]]></name>
@@ -474,6 +474,145 @@ otherwise unknown error would occur (duplicate processes).</del></p>
 Well, everything have side effects.
 But you could add <code>clear</code> command at the end of the script,
 if you don&rsquo;t really care about the traces.</del></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[你有强迫症么？]]></title>
+    <link href="http://abnerchou.me/cn/blog/2014/02/27/do-you-have-odc/"/>
+    <updated>2014-02-27T23:12:00-05:00</updated>
+    <id>http://abnerchou.me/cn/blog/2014/02/27/do-you-have-odc</id>
+    <content type="html"><![CDATA[<p>好像强迫症最近突然的流行起来，好像谁没点强迫症都不好意思见人。</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/272253582995159.jpg" alt="谢耳朵" height="530" width="415" align="absmiddle" /></p>
+
+<p>这个程序的灵感来源<a href="http://www.bilibili.tv/video/av984435/">MikeZTM</a>在其游戏视频中说的一句话，于是就想在Android上实现一下怎样呢？</p>
+
+<p>MikeZTM说的是做一个App，就显示信息提示，其它什么都不做，看强迫症怎么办？</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/272304084071686.jpg" alt="ios" height="107" width="320" align="absmiddle" /></p>
+
+<p>这是ios系统特有的一种功能，想着挺简单的一个实现啊，那就做做试试吧。</p>
+
+<p>一做才知道原来Android是不支持修改应用图标的。在经过几轮谷歌搜索后，有两种解决方案：
+1. 使用Widget来模拟图标，然后再用RemoteViews来控制用户点击事件。
+2. 在Android的项目的Resource中添加多款图标，在程序执行时更换图标。</p>
+
+<p>第二种方法明显费力不讨好。因为不可能做成百上千个图标来仅仅为实现一个提示功能，所以只能用第一种方案。</p>
+
+<p>实现效果：</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/272325102973466.png" alt="" height="420" width="260" align="absmiddle" /></p>
+
+<p>第一种方案需要解决的就是Widget和应用间的通信，因为widget在系统中相当于独立进程，所以之间通讯需要使用PendingIntent。</p>
+
+<p>仍需改进的地方: 如何获取单独Widget的ID号，这样可以让不同Widget有不同的显示。总点击计数及修改图标在MainActivity里。</p>
+
+<p>应用下载地址：<a href="http://pan.baidu.com/s/1sjFDikl">http://pan.baidu.com/s/1sjFDikl</a></p>
+
+<p>使用方法：</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/272323445937216.png" alt="Widget" height="420" width="260" align="absmiddle" />
+1. 安装程序后，拖拽此程序的Widget到主界面。
+2. 疯狂点击，感受强迫症的焦躁吧！ ^_^</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/272317242935234.png" alt="" height="420" width="260" align="absmiddle" /></p>
+
+<p>具体实现代码可见<a href="https://github.com/NoahDragon/do-you-have-ocd">源代码</a>，第一次写Android，很多尝试及注释没清理，望见谅。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[解读《CodeEval 2014 最流行编程语言》]]></title>
+    <link href="http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/"/>
+    <updated>2014-02-23T17:16:00-05:00</updated>
+    <id>http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language</id>
+    <content type="html"><![CDATA[<p><img src="http://images.cnitblog.com/blog/605265/201402/230529284143047.jpg" alt="" /></p>
+
+<p>首先了解下<a href="http://www.codeeval.com">CodeEval</a>是做什么的:</p>
+
+<blockquote><p>A tool for auto evaluating programming challenges in C/C++/Java/Python/ Ruby/PHP/Perl/ Scala/Clojure/C#/Tcl/ JavaScript/ Haskell/Go/ Bash/Lua and many more.</p></blockquote>
+
+<p>重点是这个Programming Challenges， 也就是说给定题目，让用户来解题，支持如上列出的多种语言，但不支持第三方库。</p>
+
+<p>这个编程语言排行也是根据用户解题时所用语言而制作出来的。所以这个排行无法看作是计算机行业对编程语言的需求。</p>
+
+<p>就个人体验而言，在其上解题的用户有以下几种特征：</p>
+
+<ol>
+<li>学习编程；</li>
+<li>熟悉一种新的程序语言；</li>
+<li>应聘相应工作（CodeEval会定期举行解题赢取面试机会的活动）。</li>
+</ol>
+
+
+<p>对于第一种用户，他们使用的语言可能比较基本和常见，不会使用网络端常见的Ruby，PHP，Perl等语言。</p>
+
+<p>而第二种用户，是已经掌握了一至二种语言，需要练习第三种语言，纯为娱乐。往往会使用一些与主流程序语言，或者其工作中常用的程序语言所不同的。</p>
+
+<p>第三种用户，为了获取面试机会，一定会选取高效快速的程序语言。</p>
+
+<p>再者，由于解题多用到命令行文件输入，就笔者经验（C/C++/C#/Java/Python/JavaScript/PHP),Python的文件操作最简单快捷。对于字符串转浮点整形等也是相当轻松。有些题目甚至Python只需一个函数就解决了，比如将输入文本的字母大写转成小写，小写转成大写。</p>
+
+<p>之所以<a href="http://www.python.org/">Python</a>为何能成为榜首，可以看出：一是由于其简单易学，二是由于其方便简洁的文本文档的操作方式，三是丰富的内置函数。</p>
+
+<p>Code Eval对程序的硬性限制只有一条（除去编译错误），就是运行时间不得超过10秒。但就其简单和中级的题（占总题量70%左右）来看，要写出超过10秒运行的程序也难。</p>
+
+<p>在挑战题目时，用户也不许要考虑内存，CPU运算速度，网络，硬盘操作等问题。（具体CodeEval的编译环境配置未知）</p>
+
+<p>综上，Python远较其它语言更适合进行解题。但鄙人在日常使用Python时，深受其速度拖累，核心算法还是首选C++或Java。</p>
+
+<p>总而言之，这个排行榜只是一种兴趣级别的语言排行，而非企业应用级的排行。对于没有计算机学科基础，但又对编程感兴趣的同学，可以先从Python学起；Python作为兴趣级别的使用已经足够了，只不过以后要转C/C++可能会很不适应。 ^_^</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/230531525241340.png" alt="" /></p>
+
+<p>英文报道：<a href="http://blog.codeeval.com/2014#.UwkgkHVdWKk">点我</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[病疾理心的员序程]]></title>
+    <link href="http://abnerchou.me/cn/blog/2014/02/16/%E7%97%85%E7%96%BE%E7%90%86%E5%BF%83%E7%9A%84%E5%91%98%E5%BA%8F%E7%A8%8B/"/>
+    <updated>2014-02-16T22:26:00-05:00</updated>
+    <id>http://abnerchou.me/cn/blog/2014/02/16/病疾理心的员序程</id>
+    <content type="html"><![CDATA[<p><img src="http://xradeon.com/wp-content/uploads/2013/11/programmer1.png" alt="" /></p>
+
+<p>题目请倒过来读。</p>
+
+<p>如果读过原文的，一看就明了此文的用意。是针对<a href="http://www.yinwang.org/">王银</a>的《<a href="http://www.yinwang.org/blog-cn/2014/02/09/programmer-mental/">程序员的心理疾病</a>》的一篇反文。</p>
+
+<p>也不能说是错，但作者夸张得以偏盖全，以点盖面，一棒子拍倒一片程序员。程序员真的如此不堪？这么多的缺点，甚至都不配称之为工程师？</p>
+
+<p>总结一下，原文主要说了IT行业以下几个缺点：</p>
+
+<ul>
+<li>自负自大</li>
+<li>崇拜权威</li>
+<li>窝里斗</li>
+</ul>
+
+
+<p>作者的整片文章就已经很好的阐述了程序员自负自大的这个理念。没有贬低作者的意思，他在计算机程序语言方面的成就是有目共睹的。但如下的评述是自信，自负，还是自大呢？至少没有看出一点谦虚的成分 （注：<strong>PySonar</strong>是作者在Google Intern时候所作）：</p>
+
+<blockquote><p>“然而如果你知道 PySonar 的技术含量就会明白，这样的东西需要水平高过 Python 的创造者 Guido van Rossum 很多的人才能造出来。”</p></blockquote>
+
+<p>同时自负自大的另一个表现就是嘲笑新人，或者对新人不热心。作者举了两个自己无法容忍的例子：一是问问题丢给一堆文档；二是当面演示用Google搜索答案。作者认为这相当无理。但我认为无何不妥之处。<a href="http://sachachua.com/blog/2014/02/tips-self-directed-learning-books-deliberate-practice/">Sacha Chua</a>在其关于学习的博客中有提到，当学习到达一定阶段，我们不会有教科书或者专门的老师来指导教学，能遇到个Mentor就是人生的大幸了。作者希望自己的每个问题都受到他人的重视，难免有些强人所难。况且有时候我们自身对问题的理解，和别人对问题的看法是有出入的。</p>
+
+<p>还有有一句话说得好，就是“你怎么看自己，别人就怎么看你”。最简单的一个例子就是早起照镜子，发现自己头上有根呆毛，但由于赶时间匆忙出门，路上就总感觉别人投来异样的目光，午餐时邻桌传来的笑声也觉得是嘲笑，其实殊不知呆毛早就顺应地心引力垂了下来。这种心理现象比比皆是，往往也是不开心的源泉。</p>
+
+<p>说计算机就算当机也无所谓。看看当今金融领域多少是利用计算机在完成交易，飞机的自动导航，汽车的防抱死系统、防侧翻系统，等等。软件可能无法直接伤人，但就如“吾虽不杀伯仁，伯仁因我而死”，不可避免要影响到人们的生活。</p>
+
+<p>作者另一个论点就是窝里斗，但从其贬低软件工程师的思路来看，窝里斗的现象可见严重。主要论据是就算系统死机，也不会危及他人。这种说法有失偏颇。别且因此说计算机不是科学，也是完全没有依据的。目前学术界也一直在争论。从各大高校对于计算机学科所属院系就可以看出这种分歧。</p>
+
+<blockquote><p><a href="http://en.wikipedia.org/wiki/Science">Science</a> (from Latin scientia, meaning &ldquo;knowledge&rdquo;) is a systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe.</p></blockquote>
+
+<p>从以上科学的定义可以看出， 可重复的实验和可预期的结果是关键。比如绘画，对于一副画的好坏很难用一定标尺来衡量，再如文学，一千个人心中有一千个哈姆雷特。但计算机呢，总不能敲下去一个回车键，有一千种反应的可能吧；而且对于程序的好坏也有系统的衡量标准。现阶段的这种对于计算机到底属于哪类的争论，完全是由于计算机领域太年轻，60年的发展还不足以让大家统一到一起。单从现今技术的走向来看，在10多年前，谁也不会想到网络会有现在的力量。云计算，云存储，掀起了网络脚本语言的热潮。JavaScript竟然一跃成为Web开发的主流语言。再看微软刚起步的上世纪80年代，最主流的语言的C语言，它的胞弟C++才刚出生不久，而现在确实Java横扫的所有平台。</p>
+
+<p>无法给计算机领域一个确切的定义，也正是由于其变化太快。在单机领域，技术、理论等都已稳定与成熟，但网络方面、人工智能等领域还有好多亟待解决的问题。这就造成了有部分已经成为科学，但另一部分却还是在工程领域。个人还是偏向于计算机是属科学的。</p>
+
+<p>对于软件领域的盲目崇拜权威，我认为这在所有领域都存在，不光是IT业。在此就不复述了。</p>
+
+<p><em>本文是就自己对作者文章中一些观点的看法，作为存档记录之用。</em></p>
 ]]></content>
   </entry>
   
