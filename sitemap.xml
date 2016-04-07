@@ -45,6 +45,14 @@
     <lastmod>2014-02-04T12:24:00-05:00</lastmod>
   </url>
   <url>
+    <loc>http://abnerchou.me/cn/blog/2008/11/11/%E6%88%91%E7%9C%8B%E7%9A%84%E9%82%A3%E4%BA%9B%E7%89%87/</loc>
+    <lastmod>2008-11-11T19:15:00-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/cn/blog/2006/12/28/%E5%BF%98%E8%AE%B0-%E5%BF%98%E8%AE%B0%E7%9A%84/</loc>
+    <lastmod>2006-12-28T19:15:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://abnerchou.me/404.html</loc>
   </url>
   <url>
@@ -70,6 +78,12 @@
   </url>
   <url>
     <loc>http://abnerchou.me/about/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/feeling/</loc>
+  </url>
+  <url>
+    <loc>http://abnerchou.me/blog/categories/movie-review/</loc>
   </url>
   <url>
     <loc>http://abnerchou.me/blog/categories/review/</loc>
@@ -133,8 +147,5 @@
   </url>
   <url>
     <loc>http://abnerchou.me/blog/categories/website/</loc>
-  </url>
-  <url>
-    <loc>http://abnerchou.me/blog/categories/movie-review/</loc>
   </url>
 </urlset>
