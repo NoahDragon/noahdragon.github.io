@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>《VIM-Adventures攻略》 LEVEL 4、5 - Dream Navigator</title>
+  <meta name="author" content="Abner Chou">
+
+  
+  <meta name="description" content="上一篇文章忘记说明文本编辑器的模式： 所有文本编辑器都至少有两种模式，编辑模式和控制模式。编辑模式就是普通的文本输入，但控制模式似乎并不多见。由于平时我们所用的word并没有明确的区分这两种模式，但通过快捷键及按钮辅助，控制模式对我们也不是很陌生。 在vim中这两种模式的切换是通过Esc键来完成的 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://abnerchou.me/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Dream Navigator" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='//fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48498357-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <nav role="navigation">
+
+<ul class="main-navigation">
+  <li>
+        
+            <a href="/cn">首页</a>
+        
+  </li>
+  <li>
+        
+            <a href="/cn/archives">目录</a>
+        
+  </li>
+  <li>
+      
+          <a href="/cn/about">关于</a>
+      
+  </li>
+  <li>
+      
+          <a href="/">English Version</a>
+      
+  </li>
+</ul>
+
+</nav>
+  <header role="banner"><div class='hero'>
+	<div class='wrap'>
+	  <h1><a href="/">Dream Navigator</a></h1>
+	  
+	    <h2>A Developer in Limbo | Polaris in Dream Sky</h2>
+	  
+	</div>
+</div>
+
+</header>
+
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">《VIM-Adventures攻略》 LEVEL 4、5</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-10T20:15:00-04:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://abnerchou.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>上一篇文章忘记说明文本编辑器的模式：</p>
+
+<blockquote><p>所有文本编辑器都至少有两种模式，编辑模式和控制模式。编辑模式就是普通的文本输入，但控制模式似乎并不多见。由于平时我们所用的word并没有明确的区分这两种模式，但通过快捷键及按钮辅助，控制模式对我们也不是很陌生。</p>
+
+<p>在vim中这两种模式的切换是通过Esc键来完成的，有明确的划分。在控制模式下键盘的按键不再是简单字符，而是具有相应的控制功能。</p>
+
+<p>简单这么说明下，也就方便理解学习这些快捷键的重要性了。</p></blockquote>
+
+<p><strong>公告：</strong>《VIM-Adventures》的作者愿意免费赠送一个此游戏的激活码给在本系列攻略中留言的用户。活动详情请见本文末。</p>
+
+<p>前三关是试玩关卡，难度还算简单；但其后的关卡是越来越难。</p>
+
+<p><strong>第四关：</strong></p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201403/101035419231391.jpg" alt="" /></p>
+
+<p>本关学习按键：</p>
+
+<ul>
+<li>W 跳转到下一个字符串的首字母 （对应英文单词Word）</li>
+<li>E 跳转到下一个字符串的尾字母 （对应英文单词End）</li>
+<li>r 更改一个字符 （对应英文单词Replace）</li>
+</ul>
+
+
+<p>本关相对比较简单，只需要按照要求练习删除和修改就可通关。</p>
+
+<p>关于W、E与w、e的区别，可以参考<a href="http://www.cnblogs.com/dreamstar/p/3581421.html">B与b的区别</a>。</p>
+
+<p><strong>第五关：</strong></p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201403/101039492515063.jpg" alt="" /></p>
+
+<ul>
+<li>d 可与w、e、b、W、E、B、h、j、k、l、d等字符组合，用来删除字符串或者句子。 （对应英文单词Delete）</li>
+</ul>
+
+
+<p>首先通过删除和修改来获得d键，这个比较简单和第四关差不多。</p>
+
+<p>通过提示可以获知，d键与其它已习得的按键组合，可以达到快速删除字符、单词、字符串、以及句子、段落的效果。</p>
+
+<p>简单说明下其主要组合：</p>
+
+<ul>
+<li>dl 与x功能一样，删除光标下一个字符，相当于键盘上的Del； dh 与之相反，功能相当于键盘上的backspace</li>
+<li>dw、de、dW、dE 均为向后删除一个单词或字符串，区别在于de/dE是从当前位置到单词或字符串末尾，而dw/dW是删除当前位置到下一个单词或字符串之前</li>
+<li>db、dB 向前删除一个单词或字符串。需要注意的是光标下的字符不删除</li>
+<li>dk、dj 分别是向上和向下删除两行</li>
+<li>dd 删除本行</li>
+</ul>
+
+
+<p>本关难点在下图标注的蓝色区域：</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201403/101103428298997.jpg" alt="" /></p>
+
+<p>在没有提示的情况下很难想到dj或dk可以删除两行。另外一点是，X所在的位置没有标注要删除，但注意最下方的一行话：“BTW， X does mark the spot”也就是说X即是标记所在的位置，站在上图标注的蓝色方框&#8221;.&ldquo;上，按dB即可删除X （直接在X上按x键是不行的，不过系统会提示正确方法）。</p>
+
+<p>第五关卡了好久，就是没有明白他所说的“X does mark the spot”的具体含义，浪费了不少时间。</p>
+
+<p>下一章节第6关，敬请期待～</p>
+
+<p><strong>活动详情</strong></p>
+
+<p>用户需要达成以下两个要求即可获得抽奖资格：</p>
+
+<ol>
+<li>在本系列文章中留言；</li>
+<li><del>推荐本系列的任一文章。</del>关注博主。</li>
+</ol>
+
+
+<p>（如果可能的话再<del>关注下博主</del>推荐本系列任一文章，不胜感激。）</p>
+
+<p>（更新：由于无法获知谁推荐了文章，所以还是以留言和关注信息作为抽奖标准吧。）</p>
+
+<p>抽奖将在本系列文章连载结束后进行，届时将通过博客园站内信通知获奖用户。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Abner Chou</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-10T20:15:00-04:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://abnerchou.me/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5/" data-via="" data-counturl="http://abnerchou.me/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/cn/blog/2014/03/04/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-1-3/" title="Previous Post: 《VIM-Adventures攻略》 LEVEL 1-3">&laquo; 《VIM-Adventures攻略》 LEVEL 1-3</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/03/11/my-first-blog-here/" title="Next Post: My First Blog Here">My First Blog Here &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Test_AD_468_60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-7111732968167538"
+     data-ad-slot="3357787207"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+    </div>
+  </div>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dreamnavigator';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://abnerchou.me/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5/';
+        var disqus_url = 'http://abnerchou.me/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  
+  <aside class="sidebar">
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Test_AD_468_60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-7111732968167538"
+     data-ad-slot="3357787207"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2015/10/10/frozen-heart-cracked-plot/">Frozen Heart Cracked Plot</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2015/05/12/some-info-about-build-a-website/">一些关于搭建网页的信息</a>
+      </li>
+	
+    
+	
+    
+	
+    
+	
+    
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/03/10/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-4-5/">《VIM-Adventures攻略》 LEVEL 4、5</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/03/04/VIM-Adventures%E6%94%BB%E7%95%A5-LEVEL-1-3/">《VIM-Adventures攻略》 LEVEL 1-3</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/03/02/VIM-Adventures%E6%94%BB%E7%95%A5-%E5%89%8D%E8%A8%80/">《VIM-Adventures攻略》前言</a>
+      </li>
+	
+    
+	
+		
+			
+  </ul>
+</section>
+
+
+
+
+  <div class="footer_in_sidebar">
+    <p>
+    Copyright &copy; 2016
+    </p>
+</div>
+
+    
+  </aside>
+  
+</body>
+
+
+</html>
