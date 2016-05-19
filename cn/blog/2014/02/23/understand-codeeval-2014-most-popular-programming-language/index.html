@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>解读《CodeEval 2014 最流行编程语言》 - Dream Navigator</title>
+  <meta name="author" content="Abner Chou">
+
+  
+  <meta name="description" content="How should we view the popular programming language.">
+  <meta name="keywords" content="2014, CodeEval, Programming Language, Popular, Review">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Dream Navigator" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='//fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48498357-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body    class="collapse-sidebar sidebar-footer" >
+  <nav role="navigation">
+
+<ul class="main-navigation">
+  <li>
+        
+            <a href="/cn">首页</a>
+        
+  </li>
+  <li>
+        
+            <a href="/cn/archives">目录</a>
+        
+  </li>
+  <li>
+      
+          <a href="/cn/about">关于</a>
+      
+  </li>
+  <li>
+      
+          <a href="/">English Version</a>
+      
+  </li>
+</ul>
+
+</nav>
+  <header role="banner"><div class='hero'>
+	<div class='wrap'>
+	  <h1><a href="/">Dream Navigator</a></h1>
+	  
+	    <h2>A Developer in Limbo | Polaris in Dream Sky</h2>
+	  
+	</div>
+</div>
+
+</header>
+
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">解读《CodeEval 2014 最流行编程语言》</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-23T17:16:00-05:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://abnerchou.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://images.cnitblog.com/blog/605265/201402/230529284143047.jpg" alt="" /></p>
+
+<p>首先了解下<a href="http://www.codeeval.com">CodeEval</a>是做什么的:</p>
+
+<blockquote><p>A tool for auto evaluating programming challenges in C/C++/Java/Python/ Ruby/PHP/Perl/ Scala/Clojure/C#/Tcl/ JavaScript/ Haskell/Go/ Bash/Lua and many more.</p></blockquote>
+
+<p>重点是这个Programming Challenges， 也就是说给定题目，让用户来解题，支持如上列出的多种语言，但不支持第三方库。</p>
+
+<p>这个编程语言排行也是根据用户解题时所用语言而制作出来的。所以这个排行无法看作是计算机行业对编程语言的需求。</p>
+
+<!-- more -->
+
+
+<p>就个人体验而言，在其上解题的用户有以下几种特征：</p>
+
+<ol>
+<li>学习编程；</li>
+<li>熟悉一种新的程序语言；</li>
+<li>应聘相应工作（CodeEval会定期举行解题赢取面试机会的活动）。</li>
+</ol>
+
+
+<p>对于第一种用户，他们使用的语言可能比较基本和常见，不会使用网络端常见的Ruby，PHP，Perl等语言。</p>
+
+<p>而第二种用户，是已经掌握了一至二种语言，需要练习第三种语言，纯为娱乐。往往会使用一些与主流程序语言，或者其工作中常用的程序语言所不同的。</p>
+
+<p>第三种用户，为了获取面试机会，一定会选取高效快速的程序语言。</p>
+
+<p>再者，由于解题多用到命令行文件输入，就笔者经验（C/C++/C#/Java/Python/JavaScript/PHP),Python的文件操作最简单快捷。对于字符串转浮点整形等也是相当轻松。有些题目甚至Python只需一个函数就解决了，比如将输入文本的字母大写转成小写，小写转成大写。</p>
+
+<p>之所以<a href="http://www.python.org/">Python</a>为何能成为榜首，可以看出：一是由于其简单易学，二是由于其方便简洁的文本文档的操作方式，三是丰富的内置函数。</p>
+
+<p>Code Eval对程序的硬性限制只有一条（除去编译错误），就是运行时间不得超过10秒。但就其简单和中级的题（占总题量70%左右）来看，要写出超过10秒运行的程序也难。</p>
+
+<p>在挑战题目时，用户也不许要考虑内存，CPU运算速度，网络，硬盘操作等问题。（具体CodeEval的编译环境配置未知）</p>
+
+<p>综上，Python远较其它语言更适合进行解题。但鄙人在日常使用Python时，深受其速度拖累，核心算法还是首选C++或Java。</p>
+
+<p>总而言之，这个排行榜只是一种兴趣级别的语言排行，而非企业应用级的排行。对于没有计算机学科基础，但又对编程感兴趣的同学，可以先从Python学起；Python作为兴趣级别的使用已经足够了，只不过以后要转C/C++可能会很不适应。 ^_^</p>
+
+<p><img src="http://images.cnitblog.com/blog/605265/201402/230531525241340.png" alt="" /></p>
+
+<p>英文报道：<a href="http://blog.codeeval.com/2014#.UwkgkHVdWKk">点我</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Abner Chou</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-23T17:16:00-05:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming-language/'>programming language</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/" data-via="" data-counturl="http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/cn/blog/2014/02/17/%E7%BB%99%E7%AE%80%E4%B9%A6%E7%9A%84%E4%B8%80%E7%82%B9%E5%BB%BA%E8%AE%AE/" title="Previous Post: 给简书的一点建议">&laquo; 给简书的一点建议</a>
+      
+      
+        <a class="basic-alignment right" href="/cn/blog/2014/02/27/do-you-have-odc/" title="Next Post: 你有强迫症么？">你有强迫症么？ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Test_AD_468_60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-7111732968167538"
+     data-ad-slot="3357787207"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+    </div>
+  </div>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'dreamnavigator';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/';
+        var disqus_url = 'http://abnerchou.me/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  
+  <aside class="sidebar">
+    
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Test_AD_468_60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-7111732968167538"
+     data-ad-slot="3357787207"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2015/10/10/frozen-heart-cracked-plot/">Frozen Heart Cracked Plot</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2015/05/12/some-info-about-build-a-website/">一些关于搭建网页的信息</a>
+      </li>
+	
+    
+	
+    
+	
+    
+	
+    
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/02/27/do-you-have-odc/">你有强迫症么？</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/02/23/understand-codeeval-2014-most-popular-programming-language/">解读《CodeEval 2014 最流行编程语言》</a>
+      </li>
+	
+    
+	
+		
+		 
+      <li class="post">
+        <a href="/cn/blog/2014/02/17/%E7%BB%99%E7%AE%80%E4%B9%A6%E7%9A%84%E4%B8%80%E7%82%B9%E5%BB%BA%E8%AE%AE/">给简书的一点建议</a>
+      </li>
+	
+    
+	
+		
+			
+  </ul>
+</section>
+
+
+
+
+  <div class="footer_in_sidebar">
+    <p>
+    Copyright &copy; 2015
+    </p>
+</div>
+
+    
+  </aside>
+  
+</body>
+
+
+</html>

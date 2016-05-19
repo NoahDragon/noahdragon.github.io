@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Dream Navigator]]></title>
+  <link href="http://abnerchou.me/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://abnerchou.me/"/>
+  <updated>2015-12-15T21:15:44-05:00</updated>
+  <id>http://abnerchou.me/</id>
+  <author>
+    <name><![CDATA[Abner Chou]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My First Blog Here]]></title>
+    <link href="http://abnerchou.me/blog/2014/03/11/my-first-blog-here/"/>
+    <updated>2014-03-11T22:52:09-04:00</updated>
+    <id>http://abnerchou.me/blog/2014/03/11/my-first-blog-here</id>
+    <content type="html"><![CDATA[<p>Well, this is my first blog here (right now on github).</p>
+
+<p>I&rsquo;m using the <a href="http://octopress.org">Octopress</a> as blog content management,
+and I will briefly describe the way to set it up.</p>
+
+<!-- more -->
+
+
+<p>First, go to Octopress <a href="http://octopress.org/docs/setup/">setup page</a>.
+Follow the instruction,
+install the dependencies that Octopress will need.</p>
+
+<p>Then choose the platform that the blog will be hosted on,
+here is a link for <a href="http://octopress.org/docs/deploying/github/">deploying github pages</a>.
+<strong>Note</strong>: an error occured while I followed the instruction to rake it.
+<code>bash
+rake aborted!
+You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.6.
+Prepending `bundle exec` to your command may solve this.
+/Users/Haochen/myBlog/octopress/Rakefile:2:in `&lt;top (required)&gt;'
+(See full trace by running task with --trace)
+</code>
+This error could be easily solved by adding <code>bundle exec</code> in front of the <code>rake</code> command.</p>
+
+<p>After <code>rake generate</code>, go to &lsquo;_deploy&rsquo; folder, and type <code>git pull origin master</code>.
+Then type <code>rake deploy</code>.
+Otherwise, there will be some errors:
+<code>bash
+error: failed to push some refs to 'git@gihub.com:your github page repo'
+</code></p>
+
+<p>Now, your blog page is on-line.
+Although the pages are hosted on github,
+you still need version control on your Octopress settings,
+so don&rsquo;t forget to commit to the &lsquo;source&rsquo; branch.
+<code>bash
+git add .
+git commit -m 'your message'
+git push origin source
+</code>
+(I&rsquo;d rather put them into a bash file than typing every time)
+<code>bash git_commit_source.sh
+!/bin/bash
+git add . &amp;&amp;
+git commit -m "$1" &amp;&amp; #first argument will be the commit message
+git push origin source
+</code></p>
+
+<p>To generate a blog page, you could use <code>rake new_post['blog name']</code>.
+However, as I mentioned before the <code>rake</code> command wouldn&rsquo;t work properly if the ruby version didn&rsquo;t match.
+We could use <code>bundle exec rake</code> to run the command.
+Moreover, if you are using <strong>zsh shell</strong>, you should also add <code>noglob</code> in front of these command, because symbol &lsquo;[&rsquo; and &lsquo;]&rsquo; are reserved in zsh for regular expression.</p>
+
+<p>Finally, my blog is here.
+Much easier than I expected.
+Using Octopress can save your time on setting a blog site, and it generates pages automatically.</p>
+
+<p>This blog is still underconstruction. I would like to make it more simple and pretty.
+K.I.S.S</p>
+
+<p><strong>Update</strong> (several minutes later):
+Encountered a problem of creating single page, e.g. 404.html.
+The command <code>rake new-page['404']</code> cannot work on zsh due to &lsquo;[]&rsquo; is converted.
+Hence, the only way to add cutomize page is to write a markdown file and put into &lsquo;source&rsquo; fold.
+But, do not forget to add the following to the head of page:</p>
+
+<pre><code class="bash">---
+layout: page
+title: "Super Awesome"
+date: 2011-07-03 5:59
+comments: true
+sharing: true
+footer: true
+---
+</code></pre>
+
+<p><strong>Update</strong> (2014-Mar-12):
+<code>rake preview</code> has problem with Safari.
+Don&rsquo;t know why but only show blank page while open <a href="http://localhost:4000">http://localhost:4000</a> .
+Using Chrome or Firefox will solve this.[<a href="https://github.com/imathis/octopress/issues/1395">ref</a>]</p>
+
+<p>Due to save typing, I have written some bash files:
+&#8220;` bash deploy.sh</p>
+
+<h1>!/bin/bash</h1>
+
+<p>bundle exec rake generate &amp;&amp;
+bundle exec rake deploy</p>
+
+<pre><code></code></pre>
+
+<h1>!/bin/bash</h1>
+
+<h1>set up the octopress preview</h1>
+
+<h1>open <a href="http://localhost:4000">http://localhost:4000</a> in Chrome</h1>
+
+<h1>Safari has some wired error in it</h1>
+
+<h1>if previous preview is running, stop it</h1>
+
+<p>preview_pid=<code>/bin/ps -fu $USER| grep "rake\ preview" | grep -v "grep" | awk '{print $2}'</code>
+kill -2 $preview_pid</p>
+
+<p>bundle exec rake generate &amp;&amp;
+bundle exec rake preview &amp;</p>
+
+<p>sleep 5 # wait a while to make sure the preview already running</p>
+
+<h1>change the browser command if you are using a different OS and browser</h1>
+
+<p>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &lsquo;<a href="http://localhost:4000">http://localhost:4000</a>&rsquo;</p>
+
+<p>pidof &ldquo;Google Chrome&rdquo; | xargs wait
+preview_pid=<code>/bin/ps -fu $USER| grep "rake\ preview" | grep -v "grep" | awk '{print $2}'</code>
+kill -2 $preview_pid</p>
+
+<h1>echo &ldquo;$preview_pid&rdquo;</h1>
+
+<p>echo &ldquo;Preview DONE!&rdquo;</p>
+
+<p>&#8220;`</p>
+
+<p>Please ignore the text below, the latest code fixes all of them. :P</p>
+
+<p><del><strong>Warnning</strong>:
+This preview shell script may not work for you if you are a ruby developer,
+or you are using some programs written or depended in/on ruby or ruby packages,
+because it killed all ruby processes at the end.
+Do not forget to fully quit Chrome (Comman+q in MacOS) before starting a new preview,
+otherwise unknown error would occur (duplicate processes).</del></p>
+
+<p><del>BTW, the preview.sh also left a messy terminal for you.
+Well, everything have side effects.
+But you could add <code>clear</code> command at the end of the script,
+if you don&rsquo;t really care about the traces.</del></p>
+]]></content>
+  </entry>
+  
+</feed>
