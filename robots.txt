@@ -1,3 +1,10 @@
+Sitemap: https://www.abnerchou.me/sitemap.xml
+Sitemap: https://en.abnerchou.me/sitemap.xml
+Sitemap: https://cn.abnerchou.me/sitemap.xml
+Sitemap: http://en.abnerchou.me/sitemap.xml
+Sitemap: http://cn.abnerchou.me/sitemap.xml
+Sitemap: http://www.abnerchou.me/sitemap.xml
+
 User-agent: *
 Disallow:
 
