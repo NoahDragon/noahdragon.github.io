@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vps | Dream Navigator]]></title>
+  <link href="http://abnerchou.me/blog/categories/vps/atom.xml" rel="self"/>
+  <link href="http://abnerchou.me/"/>
+  <updated>2015-12-15T21:15:44-05:00</updated>
+  <id>http://abnerchou.me/</id>
+  <author>
+    <name><![CDATA[Abner Chou]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Set up VPN with transparent proxy on DigitalOcean]]></title>
+    <link href="http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean/"/>
+    <updated>2014-07-12T20:43:47-04:00</updated>
+    <id>http://abnerchou.me/blog/2014/07/12/set-up-vpn-with-transparent-proxy-on-digitalocean</id>
+    <content type="html"><![CDATA[<p>Recently I just rent a VPS on <a href="https://www.digitalocean.com">Digital Ocean</a>,
+which is cheap for a student and who is price sensitive.
+As it gives you all the controls of an OS, it likes a remote compute machine.
+Meanwhile, you could do anything as you have your own server.</p>
+
+<!-- more -->
+
+
+<p>Therefore, it comes to my mind to create a VPN server.
+VPN is a virtual private network that extends a private network across a public network,
+which usually used to bypass firewalls or increase access speed.
+Proxy is a server that acts as an intermediary for requests from clients seeking resources from other servers.
+It needs to be set in software application&rsquo;s configuration.
+VPN and Proxy both could hide your ip.
+The differences between them are listed following:</p>
+
+<p>|                  |VPN                                                        |Proxy                                         |
+|:&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;:|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;:|
+|Protocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Support any Protocols|Support certain Protocols, such as HTTP, SOCKS
+|Softwares         |Any softwares that can run on the machine &nbsp;&nbsp;&nbsp;&nbsp;|Softwares support proxy configuration
+|Price             |High if you rent from vpn provider|Low
+|Speed             |Varies depend on number of users<br/>usually depends on servers |Depend on servers
+|Security          |Encryption (128-bit to 2048-bit)|Not encrypted
+<br/></p>
+
+<p>Because of the encryption, every accesses through VPN retrive the objects directly from the source.
+This could slow down the user experience when hits a same object multiple times, such as icons in a webpage.
+If there is a way that could cache web objects into VPN server, that will significantly increase the access speed, which get objects from local disk instead of downloading from source website.
+Here, I should introduce the transparent proxy, which usually sets on the gateway and caches content from WWW requests.
+It calls transparent because client side does not need any configuration.
+Hence, every WWW requests through VPN need go to transparent proxy.</p>
+
+<p>This installation guide is tested on Ubuntu 14.04 64bit.
+VPN is set up by <a href="http://en.wikipedia.org/wiki/Point-to-Point_Tunneling_Protocol">pptp</a>.
+Transparent proxy is on <a href="http://www.squid-cache.org">Squid3</a>.</p>
+
+<ul>
+<li><strong>pptp installation</strong></li>
+</ul>
+
+
+<p>In terminal, type the command bellow to install pptp server:
+<code>
+sudo apt-get install pptpd
+</code>
+To restrict user access your VPN server, you also need to add users and passwords in <code>/etc/ppp/chap-secets</code>.
+In the client column is user&rsquo;s name, the secret column is for passwords.
+I masked mine for privacy.</p>
+
+<p><img src="/images/pics/user_password.jpg" alt="Set user and password"/></p>
+
+<p>Add the following DNS to <code>/etc/ppp/pptpd-options</code>:
+<code>
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+</code>
+Restart pptp server by command <code>service pptpd restart</code>. Check if it is running by <code>netstat -alpn | grep :1723</code>.</p>
+
+<p>You also should enable the IP forwarding on your pptp server.
+This would transfer the package between public ip and private ips on your server.
+Open <code>/etc/sysctl.conf</code>, add the following line if not exist: <code>net.ipv4.ip_forward = 1</code>.
+Then run <code>sysctl -p</code> to make the change effective.</p>
+
+<p>Create NAT rule for iptables, and your VPN is ready to use:
+<code>
+iptables --table nat --append POSTROUTING -o eth0 -j MASQUERADE &amp;&amp; iptables-save
+</code></p>
+
+<ul>
+<li><strong>Squid3 installation</strong></li>
+</ul>
+
+
+<p>Similar to pptpd, typing the following in terminal:
+<code>
+sudo apt-get install squid
+update-rc.d squid3 defaults
+</code>
+The proxy is usable now, but it is the normal proxy with default settings.
+To change it to transparent proxy, we need to edit the <code>/etc/squid3/squid.conf</code> file.
+The squid.conf follows the rules of allow/deny order.
+It obeys the first come first serve, the first matched rule will apply.
+For example, if you put &ldquo;deny all&rdquo; at the first line of squid.conf, then the proxy denies all request.
+If a rule does not indicate in squid.conf, then it defaults as deny.</p>
+
+<p>First, find the line <code>http_port 3128</code>, change it to <code>http_port 3128 transparent</code>.
+<strong> this is important </strong></p>
+
+<p>Second, add the following rules:
+<code>
+acl myhost src 192.168.0.1
+http_access allow myhost
+acl mymachine src 10.0.0.0/16
+http_access allow mymachine
+</code>
+The &lsquo;192.168.0.1&rsquo; is my public ip, and the &lsquo;10.0.0.0/16&rsquo; is my private ips.
+Restart squid <code>sudo service squid3 restart</code>.</p>
+
+<p>Finally, we set the iptables to redirect all the traffic through 80 port to 3128 port that is our transparent proxy.
+<code>
+iptables -t nat -A PREROUTING -i ppp0 -p tcp -m tcp --dport 80 -j REDIRECT --to-port 3128
+</code>
+The transparent proxy is set up.</p>
+
+<ul>
+<li><strong>Restore iptables rules while system start up</strong></li>
+</ul>
+
+
+<p>Right now, you couldn&rsquo;t restart the system, otherwise the iptables will be set to empty again.
+But you can input the previous iptables commands again to solve this.</p>
+
+<p>Here I introduce a method that will do it once and for all.</p>
+
+<p>Save iptables into <code>/etc/network/iptables.rules</code> by <code>iptables-save &gt; /etc/network/iptables.rules</code></p>
+
+<p>Open <code>/etc/rc.local</code> and add the following line before &ldquo;exit 0&rdquo;:
+<code>
+/sbin/iptables-restore &lt; /etc/network/iptables.rules
+</code>
+Then our saved iptables rules will be loaded every time the system start up.</p>
+
+<p>Enjoy your VPN server with transparent proxy!</p>
+]]></content>
+  </entry>
+  
+</feed>
