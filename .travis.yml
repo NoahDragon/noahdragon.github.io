@@ -12,4 +12,4 @@ before_script:
   - ssh-keyscan -H -t rsa,dsa -p 21521 118.193.213.247 >> ~/.ssh/known_hosts
 script:
   - rsync -avz --exclude .git/ -e 'ssh -p 21521' ./ haochen@118.193.213.247:/home/haochen/site/root/www/
-  - curl "https://api.keycdn.com/zones/purgeurl/$CDN_ZONE_ID.json" -u $CDN_API: -X DELETE -H "Content-Type: application/json" --data '{"urls":["'"$CDN_ZONE_URL"'/index.html", "'"$CDN_ZONE_URL"'/sitemap.xml", "'"$CDN_ZONE_URL"'/page-sitemap.xml"]}'
+  - curl "https://api.keycdn.com/zones/purgeurl/$CDN_ZONE_ID.json" -u $CDN_API: -X DELETE -H "Content-Type: application/json" --data '{"urls": ["'"$CDN_ZONE_URL"'/index.html", "'"$CDN_ZONE_URL"'/sitemap.xml", "'"$CDN_ZONE_URL"'/page-sitemap.xml"]}'
