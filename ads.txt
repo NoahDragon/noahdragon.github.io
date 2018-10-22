@@ -36,3 +36,16 @@ rubiconproject.com, 15476, RESELLER, 0bfd66d529a55807
 contextweb.com, 559988, RESELLER, 89ff185a4c4e857c
 rhythmone.com, 2221906906,DIRECT,a670c89d4a324e47
 districtm.io, 101519, RESELLER
+33across.com,0010b00002CpYhEAAV,RESELLER,bbea06d9c4d2853c
+appnexus.com,1356,RESELLER,f5ab79cb980f11d1
+coxmt.com,2000067907202,RESELLER
+emxdgt.com,326,RESELLER,1e1d41537f7cad7f
+google.com,pub-4299156005397946,RESELLER,f08c47fec0942fa0
+indexexchange.com,175407,RESELLER
+indexexchange.com,185506,RESELLER
+openx.com,537143344,RESELLER
+pubmatic.com,156078,RESELLER,5d62403b186f2ace
+pubmatic.com,156423,RESELLER,5d62403b186f2ace
+rhythmone.com,2439829435,RESELLER,a670c89d4a324e47
+rubiconproject.com,16414,RESELLER,0bfd66d529a55807
+sonobi.com,f0e1159c80,RESELLER
